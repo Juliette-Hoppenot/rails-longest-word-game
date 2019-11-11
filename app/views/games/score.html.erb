@@ -1,0 +1,9 @@
+<h1>Result</h1>
+<% @answer.each do |letter|%>
+  <% if @letters.include? letter %>
+    <%= "Congratulations ! #{answer} is a valid English word!" %>
+    <% elsif @letters.include? letter && @data["found"] == false %>
+    <%= "Sorry but $#{@answer} cant' be built out of $#{@letters}" %>
+      <% end %>
+    <% end %>
+<%= link_to "Play again", new_path %>
